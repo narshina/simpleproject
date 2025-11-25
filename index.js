@@ -4,7 +4,9 @@ import userrouter from './Routes/userRoutes.js';
 
 const app = express();
 app.use(express.json());
-
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 app.use('/user',userrouter)
 
 connectDB().then(() => {
